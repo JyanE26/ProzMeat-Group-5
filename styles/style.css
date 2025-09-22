@@ -5,16 +5,22 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  color: #333;
   background-color: #f8f8f8;
+  color: #333;
   line-height: 1.6;
 }
 
 /* HEADER */
 .site-header {
-  background: #1a1a1a;
+  background-color: #1a1a1a;
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
@@ -22,7 +28,7 @@ body {
   align-items: center;
 }
 
-.site-header .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -39,24 +45,31 @@ body {
   font-weight: 500;
 }
 
-/* HERO */
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN CONTENT */
+main {
+  flex: 1;
+}
+
+/* HERO SECTION */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: #fff;
+  background-color: #ffffff;
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
 .hero p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 1.5rem;
   color: #555;
 }
 
@@ -67,69 +80,72 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background: #0077cc;
+  background-color: #0077cc;
   color: #fff;
-  text-decoration: none;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: #005fa3;
+  background-color: #005fa3;
 }
 
-/* PRODUCTS */
+/* PRODUCTS SECTION */
 .products {
   padding: 2rem;
+  background-color: #ffffff;
 }
 
 .products h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
 .product-card {
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #ddd;
   padding: 1rem;
   text-align: center;
   border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .product-card h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
 }
 
 .product-card .price {
   color: #0077cc;
-  margin-bottom: 1rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .btn-secondary {
-  background: #555;
+  background-color: #555;
   color: #fff;
+  transition: background-color 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: #333;
+  background-color: #333;
 }
 
 /* FOOTER */
 .site-footer {
-  background: #1a1a1a;
+  background-color: #1a1a1a;
   color: #fff;
   text-align: center;
   padding: 1rem 2rem;
-  margin-top: auto;
+  font-size: 0.9rem;
 }
