@@ -192,6 +192,13 @@ body {
   font-size: 15px;
 }
 
+.cart-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  margin-right: 1.2rem;
+}
+
 .profile-img {
   width: 32px;
   height: 32px;
