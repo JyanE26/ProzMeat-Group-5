@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/style-v2.css">
   <script src="scripts/main.js"></script>
   <script src="scripts/products.js"></script>
+  <script src="scripts/modal.js"></script>
 </head>
 <body>
 
@@ -54,11 +55,85 @@
       <a href="#" class="nav-link" data-category="bestseller">Best Seller</a>
     </div>
 
-    <!-- Product Sections -->
+    <!-- Purefoods Products Section -->
     <div id="product-sections">
       <div class="product-section" id="purefoods-section">
-        <h3>Purefoods Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFBeefTapa.webp" alt="Beef Tapa">
+            </div>
+            <div class="product-info">
+              <h3>Beef Tapa</h3>
+              <p>Tender and flavorful marinated beef slices, perfect for a hearty breakfast or any meal of the day.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFChickenDrummets.webp" alt="Chicken Drummets">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Drummets</h3>
+              <p>Juicy and crispy chicken drummets, great for parties or as a delicious snack.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFChickenKatsu.webp" alt="Chicken Katsu">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Katsu</h3>
+              <p>Crispy breaded chicken cutlet, served with tonkatsu sauce for a Japanese-inspired meal.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFPorkTonkatsu.webp" alt="Pork Tonkatsu">
+            </div>
+            <div class="product-info">
+              <h3>Pork Tonkatsu</h3>
+              <p>Breaded and deep-fried pork cutlet, a Japanese favorite that's crispy on the outside and tender inside.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFShrimpTempura.webp" alt="Shrimp Tempura">
+            </div>
+            <div class="product-info">
+              <h3>Shrimp Tempura</h3>
+              <p>Light and crispy battered shrimp, perfect as an appetizer or main dish with dipping sauce.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/PFTenderJuicyHotdog.webp" alt="Tender Juicy Hotdog">
+            </div>
+            <div class="product-info">
+              <h3>Tender Juicy Hotdog</h3>
+              <p>Classic Purefoods hotdog with that distinct sweet and savory taste, best served in a bun or with rice.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      
+      <!-- Other Categories (Hidden) -->
       <div class="product-section" id="cdo-section" style="display: none;">
         <h3>CDO Products Coming Soon</h3>
       </div>
@@ -87,6 +162,47 @@
 <footer class="site-footer">
   <p>© 2025 PROZMEAT Frozen Meats. All rights reserved.</p>
 </footer>
+
+<!-- Product Modal -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img id="modalProductImage" src="" alt="Product Image">
+      </div>
+      <div class="modal-details">
+        <h2 id="modalProductName"></h2>
+        <span class="product-price" id="modalProductPrice"></span>
+        <span class="product-weight" id="modalProductWeight"></span>
+        <p id="modalProductDescription"></p>
+        
+        <div class="product-details">
+          <h3>Details</h3>
+          <div class="details-grid">
+            <div class="detail-row">
+              <span class="detail-label">1kg:</span>
+              <span class="detail-value">₱200.00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">1/2kg:</span>
+              <span class="detail-value">₱150.00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">1/4kg:</span>
+              <span class="detail-value">₱115.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
