@@ -8,6 +8,22 @@
   <script src="scripts/main.js"></script>
   <script src="scripts/products.js"></script>
   <script src="scripts/modal.js"></script>
+  <script>
+    function toggleCartPreview() {
+      const preview = document.getElementById('cartPreview');
+      preview.classList.toggle('show');
+    }
+
+    // Close cart preview when clicking outside
+    document.addEventListener('click', function(event) {
+      const preview = document.getElementById('cartPreview');
+      const cartImg = document.querySelector('.cart-img');
+
+      if (!cartImg.contains(event.target) && !preview.contains(event.target)) {
+        preview.classList.remove('show');
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -27,7 +43,13 @@
   </nav>
 
   <div class="account-icon">
-    <img src="Image/Shopping.png" alt="Cart" class="cart-img">
+    <div class="cart-container">
+      <img src="Image/Shopping.png" alt="Cart" class="cart-img" onclick="toggleCartPreview()">
+      <div class="cart-preview" id="cartPreview">
+        <h3>Cart Items</h3>
+        <p>No products in your cart yet</p>
+      </div>
+    </div>
     <span class="account-label">Signed in</span>
     <img src="Image/ProfileLogo.jpg" alt="Profile" class="profile-img">
   </div>
@@ -61,6 +83,7 @@
         <div class="products-grid">
           <!-- Product 1 -->
           <div class="product-card">
+            <div class="product-tag">Best Selling</div>
             <div class="product-image">
               <img src="Image/PFBeefTapa.webp" alt="Beef Tapa">
             </div>
@@ -85,6 +108,7 @@
           
           <!-- Product 3 -->
           <div class="product-card">
+            <div class="product-tag">Best Selling</div>
             <div class="product-image">
               <img src="Image/PFChickenKatsu.webp" alt="Chicken Katsu">
             </div>
@@ -133,24 +157,561 @@
         </div>
       </div>
       
-      <!-- Other Categories (Hidden) -->
+      <!-- CDO Products Section -->
       <div class="product-section" id="cdo-section" style="display: none;">
-        <h3>CDO Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/CDO Pork Barbecue.png" alt="CDO Pork Barbecue">
+            </div>
+            <div class="product-info">
+              <h3>Pork Barbecue</h3>
+              <p>Tender marinated pork with a sweet and savory barbecue flavor, perfect for grilling or pan-frying.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/CDO Cheesy Tonkatsu.webp" alt="CDO Cheesy Tonkatsu">
+            </div>
+            <div class="product-info">
+              <h3>Cheesy Tonkatsu</h3>
+              <p>Crispy breaded pork cutlet filled with delicious melted cheese, a perfect fusion of flavors.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/CDO Chicken Tocino.jpg" alt="CDO Chicken Tocino">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Tocino</h3>
+              <p>Sweet and savory chicken tocino, a healthier alternative to pork with the same great taste.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/CDO Funtastyk Tocino.png" alt="CDO Funtastyk Tocino">
+            </div>
+            <div class="product-info">
+              <h3>Funtastyk Tocino</h3>
+              <p>Fun-shaped tocino that kids will love, with the classic sweet and savory Filipino breakfast flavor.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/CDO Pork Longganisa.png" alt="CDO Pork Longganisa">
+            </div>
+            <div class="product-info">
+              <h3>Pork Longganisa</h3>
+              <p>Traditional Filipino sausage with a sweet and garlicky flavor, a breakfast staple in every Filipino home.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+          
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/CDO Ulam Burger Cheesy.png" alt="CDO Ulam Burger Cheesy">
+            </div>
+            <div class="product-info">
+              <h3>Ulam Burger Cheesy</h3>
+              <p>Delicious burger patties filled with melted cheese, perfect for a quick and satisfying meal any time of day.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Mekeni Products Section -->
       <div class="product-section" id="mekeni-section" style="display: none;">
-        <h3>Mekeni Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Mekeni Chicken Hotdog.jpg" alt="Mekeni Chicken Hotdog">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Hotdog</h3>
+              <p>Juicy chicken hotdog with a mild, savory flavor perfect for snacks, parties, or quick meals.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Mekeni Chicken Tocino.jpg" alt="Mekeni Chicken Tocino">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Tocino</h3>
+              <p>Sweet and savory chicken tocino marinated to perfection, a healthier alternative to traditional pork tocino.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Mekeni Cooked Ham.jpg" alt="Mekeni Cooked Ham">
+            </div>
+            <div class="product-info">
+              <h3>Cooked Ham</h3>
+              <p>Premium cooked ham with rich, smoky flavor ideal for sandwiches, salads, or as a main course.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Mekeni Native Longanisa.jpg" alt="Mekeni Native Longanisa">
+            </div>
+            <div class="product-info">
+              <h3>Native Longanisa</h3>
+              <p>Traditional Filipino sausage with authentic spices and garlic, perfect for breakfast or any meal.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Mekeni Pork Longanisa.jpg" alt="Mekeni Pork Longanisa">
+            </div>
+            <div class="product-info">
+              <h3>Pork Longanisa</h3>
+              <p>Sweet and garlicky pork sausage, a Filipino breakfast staple that pairs perfectly with rice and eggs.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Mekeni Sisig.jpg" alt="Mekeni Sisig">
+            </div>
+            <div class="product-info">
+              <h3>Sisig</h3>
+              <p>Classic Filipino sisig made with chopped pork, onions, and chili, ready to cook for that perfect sizzling dish.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Joshua Products Section -->
       <div class="product-section" id="joshua-section" style="display: none;">
-        <h3>Joshua Meat Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Joshua Cooked Ham.jpg" alt="Joshua Cooked Ham">
+            </div>
+            <div class="product-info">
+              <h3>Cooked Ham</h3>
+              <p>Premium quality cooked ham with a rich, savory taste perfect for sandwiches and special occasions.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Joshua Embotido.jpg" alt="Joshua Embotido">
+            </div>
+            <div class="product-info">
+              <h3>Embotido</h3>
+              <p>Filipino-style meatloaf filled with ground pork, vegetables, and spices for an authentic taste experience.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Joshua Longanisa De Cebu.jpg" alt="Joshua Longanisa De Cebu">
+            </div>
+            <div class="product-info">
+              <h3>Longanisa De Cebu</h3>
+              <p>Traditional Cebu-style sausage with a unique blend of spices and a slightly sweet, garlicky flavor.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Joshua Pork Bologna.jpg" alt="Joshua Pork Bologna">
+            </div>
+            <div class="product-info">
+              <h3>Pork Bologna</h3>
+              <p>Smooth and flavorful pork bologna, perfect for sandwiches, snacks, or as a versatile meat option.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Joshua Pork Skinless Longanisa.jpg" alt="Joshua Pork Skinless Longanisa">
+            </div>
+            <div class="product-info">
+              <h3>Pork Skinless Longanisa</h3>
+              <p>Skinless pork sausage with traditional Filipino flavors, easy to cook and enjoy with rice.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Joshua Tocino.jpg" alt="Joshua Tocino">
+            </div>
+            <div class="product-info">
+              <h3>Tocino</h3>
+              <p>Sweet and savory cured pork tocino, marinated with the perfect balance of sugar and spices for breakfast.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Frozen Meat Products Section -->
       <div class="product-section" id="frozen-section" style="display: none;">
-        <h3>Frozen Meat Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Frozen Beef Sirloin.jpg" alt="Frozen Beef Sirloin">
+            </div>
+            <div class="product-info">
+              <h3>Beef Sirloin</h3>
+              <p>Premium frozen beef sirloin cuts, perfect for grilling, stir-fries, or special dinner preparations.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Frozen Chicken Wings.jpg" alt="Frozen Chicken Wings">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Wings</h3>
+              <p>Frozen chicken wings perfect for making crispy buffalo wings, barbecue, or your favorite wing recipes.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Frozen Chicken Drumstick.jpg" alt="Frozen Chicken Drumstick">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Drumstick</h3>
+              <p>Frozen chicken drumsticks, perfect for roasting, grilling, or making delicious fried chicken dishes.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Frozen Cream Dory.jpg" alt="Frozen Cream Dory">
+            </div>
+            <div class="product-info">
+              <h3>Cream Dory</h3>
+              <p>Frozen cream dory fish fillets, mild and flaky white fish perfect for baking, frying, or fish tacos.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Frozen Pork Back Fat.jpg" alt="Frozen Pork Back Fat">
+            </div>
+            <div class="product-info">
+              <h3>Pork Back Fat</h3>
+              <p>Frozen pork back fat, essential for making homemade sausages, pâtés, or traditional Filipino dishes.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Frozen Pork Belly Biso.jpg" alt="Frozen Pork Belly Biso">
+            </div>
+            <div class="product-info">
+              <h3>Pork Belly Biso</h3>
+              <p>Frozen pork belly cuts perfect for making crispy lechon kawali, barbecue, or traditional Filipino dishes.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Fries Products Section -->
       <div class="product-section" id="fries-section" style="display: none;">
-        <h3>Fries Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Fries Buffalo Battered Julienne Fries.webp" alt="Fries Buffalo Battered Julienne Fries">
+            </div>
+            <div class="product-info">
+              <h3>Buffalo Battered Julienne Fries</h3>
+              <p>Crispy buffalo battered julienne fries with a spicy kick, perfect as a side dish or snack with your favorite dipping sauce.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Fries Deep V Crinkle Cut Fries.webp" alt="Fries Deep V Crinkle Cut Fries">
+            </div>
+            <div class="product-info">
+              <h3>Deep V Crinkle Cut Fries</h3>
+              <p>Deep V crinkle cut fries with extra crispy edges and a fluffy interior, ideal for loading with toppings or enjoying plain.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Fries Premium Steak Cut Fries.webp" alt="Fries Premium Steak Cut Fries">
+            </div>
+            <div class="product-info">
+              <h3>Premium Steak Cut Fries</h3>
+              <p>Thick-cut premium steak fries with a hearty texture, perfect for steakhouse-style meals or as a substantial side.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Fries Shoestring Fries.webp" alt="Fries Shoestring Fries">
+            </div>
+            <div class="product-info">
+              <h3>Shoestring Fries</h3>
+              <p>Thin and crispy shoestring fries, perfect for fast food style meals or as a light and crunchy snack option.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Fries Simplot Classic Fries.webp" alt="Fries Simplot Classic Fries">
+            </div>
+            <div class="product-info">
+              <h3>Simplot Classic Fries</h3>
+              <p>Classic Simplot fries with consistent quality and taste, perfect for restaurants, cafeterias, or home use.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Image/Fries Straight Cut Fries.webp" alt="Fries Straight Cut Fries">
+            </div>
+            <div class="product-info">
+              <h3>Straight Cut Fries</h3>
+              <p>Classic straight cut fries with a perfect balance of crispy exterior and soft interior, great for any occasion.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Best Seller Products Section -->
       <div class="product-section" id="bestseller-section" style="display: none;">
-        <h3>Best Seller Products Coming Soon</h3>
+        <div class="products-grid">
+          <!-- Purefoods Best Sellers -->
+          <!-- Product 1: Beef Tapa -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/PFBeefTapa.webp" alt="Beef Tapa">
+            </div>
+            <div class="product-info">
+              <h3>Beef Tapa</h3>
+              <p>Tender and flavorful marinated beef slices, perfect for a hearty breakfast or any meal of the day.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 2: Chicken Katsu -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/PFChickenKatsu.webp" alt="Chicken Katsu">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Katsu</h3>
+              <p>Crispy breaded chicken cutlet, served with tonkatsu sauce for a Japanese-inspired meal.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- CDO Best Sellers -->
+          <!-- Product 3: Pork Barbecue -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/CDO Pork Barbecue.png" alt="CDO Pork Barbecue">
+            </div>
+            <div class="product-info">
+              <h3>Pork Barbecue</h3>
+              <p>Tender marinated pork with a sweet and savory barbecue flavor, perfect for grilling or pan-frying.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 4: Cheesy Tonkatsu -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/CDO Cheesy Tonkatsu.webp" alt="CDO Cheesy Tonkatsu">
+            </div>
+            <div class="product-info">
+              <h3>Cheesy Tonkatsu</h3>
+              <p>Crispy breaded pork cutlet filled with delicious melted cheese, a perfect fusion of flavors.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Mekeni Best Sellers -->
+          <!-- Product 5: Chicken Hotdog -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Mekeni Chicken Hotdog.jpg" alt="Mekeni Chicken Hotdog">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Hotdog</h3>
+              <p>Juicy chicken hotdog with a mild, savory flavor perfect for snacks, parties, or quick meals.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 6: Cooked Ham -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Mekeni Cooked Ham.jpg" alt="Mekeni Cooked Ham">
+            </div>
+            <div class="product-info">
+              <h3>Cooked Ham</h3>
+              <p>Premium cooked ham with rich, smoky flavor ideal for sandwiches, salads, or as a main course.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Joshua Best Sellers -->
+          <!-- Product 7: Cooked Ham -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Joshua Cooked Ham.jpg" alt="Joshua Cooked Ham">
+            </div>
+            <div class="product-info">
+              <h3>Cooked Ham</h3>
+              <p>Premium quality cooked ham with a rich, savory taste perfect for sandwiches and special occasions.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 8: Embotido -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Joshua Embotido.jpg" alt="Joshua Embotido">
+            </div>
+            <div class="product-info">
+              <h3>Embotido</h3>
+              <p>Filipino-style meatloaf filled with ground pork, vegetables, and spices for an authentic taste experience.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Frozen Meat Best Sellers -->
+          <!-- Product 9: Beef Sirloin -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Frozen Beef Sirloin.jpg" alt="Frozen Beef Sirloin">
+            </div>
+            <div class="product-info">
+              <h3>Beef Sirloin</h3>
+              <p>Premium frozen beef sirloin cuts, perfect for grilling, stir-fries, or special dinner preparations.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 10: Chicken Wings -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Frozen Chicken Wings.jpg" alt="Frozen Chicken Wings">
+            </div>
+            <div class="product-info">
+              <h3>Chicken Wings</h3>
+              <p>Frozen chicken wings perfect for making crispy buffalo wings, barbecue, or your favorite wing recipes.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Fries Best Sellers -->
+          <!-- Product 11: Premium Steak Cut Fries -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Fries Premium Steak Cut Fries.webp" alt="Fries Premium Steak Cut Fries">
+            </div>
+            <div class="product-info">
+              <h3>Premium Steak Cut Fries</h3>
+              <p>Thick-cut premium steak fries with a hearty texture, perfect for steakhouse-style meals or as a substantial side.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+
+          <!-- Product 12: Shoestring Fries -->
+          <div class="product-card">
+            <div class="product-tag">Best Selling</div>
+            <div class="product-image">
+              <img src="Image/Fries Shoestring Fries.webp" alt="Fries Shoestring Fries">
+            </div>
+            <div class="product-info">
+              <h3>Shoestring Fries</h3>
+              <p>Thin and crispy shoestring fries, perfect for fast food style meals or as a light and crunchy snack option.</p>
+              <a href="#" class="view-link">View</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

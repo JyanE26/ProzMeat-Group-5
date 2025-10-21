@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const activeSection = document.getElementById(`${category}-section`);
         if (activeSection) {
             activeSection.style.display = 'block';
-            // Smooth scroll to the section
-            activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
     

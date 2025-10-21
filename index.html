@@ -6,6 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PROZMEAT — Fresh Frozen Meats</title>
   <link rel="stylesheet" href="styles/style-v2.css">
+  <script>
+    function toggleCartPreview() {
+      const preview = document.getElementById('cartPreview');
+      preview.classList.toggle('show');
+    }
+
+    // Close cart preview when clicking outside
+    document.addEventListener('click', function(event) {
+      const preview = document.getElementById('cartPreview');
+      const cartImg = document.querySelector('.cart-img');
+
+      if (!cartImg.contains(event.target) && !preview.contains(event.target)) {
+        preview.classList.remove('show');
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -25,7 +41,13 @@
   </nav>
 
   <div class="account-icon">
-    <img src="Image/Shopping.png" alt="Cart" class="cart-img">
+    <div class="cart-container">
+      <img src="Image/Shopping.png" alt="Cart" class="cart-img" onclick="toggleCartPreview()">
+      <div class="cart-preview" id="cartPreview">
+        <h3>Cart Items</h3>
+        <p>No products in your cart yet</p>
+      </div>
+    </div>
     <span class="account-label">Signed in</span>
     <img src="Image/ProfileLogo.jpg" alt="Profile" class="profile-img">
   </div>
@@ -39,9 +61,8 @@
     <img src="Image/Banner.png" alt="PROZMEAT Banner" class="banner-img">
   </section>
 
-  <!-- Products Area -->
+  <!-- Products Section -->
   <section class="products">
-    <h2 class="products-title">Products</h2>
     <div class="product-links">
       <a href="production.html?category=purefoods">Purefoods</a>
       <span class="divider">|</span>
@@ -59,7 +80,21 @@
     </div>
   </section>
 
-</main>
+  <!-- What is ProzMeat Section -->
+  <section class="what-is-prozmeat-section">
+    <div class="prozmeat-content">
+      <h2>What is ProzMeat?</h2>
+      <p>ProzMeat is your premier destination for high-quality frozen meat products, offering a wide selection of fresh, premium cuts sourced from trusted suppliers. We specialize in providing convenient, restaurant-quality meats that bring exceptional taste and nutrition to your table, making every meal a delightful experience for families and food enthusiasts alike.</p>
+    </div>
+  </section>
+
+  <!-- ProzMeat Products Section -->
+  <section class="what-is-prozmeat-section">
+    <div class="prozmeat-content">
+      <h2>ProzMeat Products</h2>
+      <p>Explore our diverse collection of premium frozen meat products, featuring everything from succulent beef cuts and fresh poultry to traditional Filipino specialties and convenient frozen options. Each product is carefully selected to ensure exceptional quality, taste, and nutrition, making ProzMeat your trusted partner for creating memorable meals that bring families together.</p>
+    </div>
+  </section>
 
 <!-- Footer -->
 <footer class="site-footer">
