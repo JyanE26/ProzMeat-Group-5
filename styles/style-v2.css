@@ -34,13 +34,14 @@ body {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1001; /* Increased to ensure header is above other elements */
 }
 
 /* Cart Preview Styles */
 .cart-container {
   position: relative;
   display: inline-block;
+  z-index: 1002; /* Ensure container is above header */
 }
 
 .cart-img {
@@ -64,7 +65,7 @@ body {
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  z-index: 1000;
+  z-index: 2000; /* Significantly increased to ensure it's above all other elements */
   padding: 15px;
   border: 1px solid #e0e0e0;
   margin-top: 10px;
