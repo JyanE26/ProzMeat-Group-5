@@ -903,6 +903,95 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Search Bar Styles */
+.search-header {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border-right: 3px solid #e53935;
+  width: fit-content;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 0;
+}
+
+.search-bar-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* Fixed footer for store and search pages */
+body.store .site-footer,
+body.search .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Add padding to main content to prevent footer overlap */
+body.store main,
+body.search main {
+  padding-bottom: 70px;
+}
+
+/* Main Content */
+main {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 /* Account Icons */
 .account-icon {
   position: absolute;
